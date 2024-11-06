@@ -11,5 +11,4 @@ SELECT
   , QUANTITY_PURCHASED
   , PRICE
   , FINAL_PRICE
-
 FROM {{ ref('tf_receiptitems') }}
