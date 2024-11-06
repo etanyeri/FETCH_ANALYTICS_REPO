@@ -6,6 +6,6 @@ SELECT
     , b.brand_category AS BRAND_CATEGORY
     , b.brand_category_code AS BRAND_CATEGORY_CODE
     , b.brand_cpg AS BRAND_CPG
-    , b.brand_top AS BRAND_TOP
+    , b.brand_top AS IS_BRAND_TOP
     , b.brand_name AS BRAND_NAME
 FROM {{ ref('tf_brands') }} AS b
