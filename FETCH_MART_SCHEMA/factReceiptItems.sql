@@ -1,6 +1,6 @@
 
 SELECT
-  generate_surrogate_key(r.RECEIPT_KEY || '-' || fr.PRODUCT_ID) AS RECEIPT_ITEM_KEY
+  generate_surrogate_key(RECEIPT_ID || '-' || PRODUCT_ID) AS RECEIPT_ITEM_KEY
   , RECEIPT_KEY
   , USER_KEY
   , RECEIPT_ID
