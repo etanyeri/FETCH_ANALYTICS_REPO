@@ -6,7 +6,7 @@ WITH flattened_receipt_items AS (
         f.value:itemPrice::float AS PRICE,
         f.value:finalPrice::float AS FINAL_PRICE
     FROM 
-        your_receipts_table r,
+        FROM {{ source('fetch_ingest', 'receipts') }} AS r
         LATERAL FLATTEN(input => r.rewardsReceiptItemList) f
 )
 
@@ -24,6 +24,6 @@ SELECT
     , fr.FINAL_PRICE,
     
 FROM 
-    your_receipts_table r
+    FROM {{ source('fetch_ingest', 'receipts') }} AS r
 JOIN 
     flattened_receipt_items fr ON r.RECEIPT_KEY = fr.RECEIPT_KEY;
