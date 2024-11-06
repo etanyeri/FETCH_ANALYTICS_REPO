@@ -21,7 +21,7 @@ SELECT
     , fr.QUANTITY_PURCHASED
     , fr.PRICE
     , fr.FINAL_PRICE
-FROM 
-    {{ source('fetch_ingest', 'receipts') }} AS r
+    
+FROM {{ ref('tf_receipts') }} AS r
 JOIN 
     flattened_receipt_items fr ON r.RECEIPT_KEY = fr.RECEIPT_KEY;
