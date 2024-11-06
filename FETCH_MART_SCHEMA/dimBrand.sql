@@ -8,4 +8,4 @@ SELECT
     , b.brand_cpg AS BRAND_CPG
     , b.brand_top AS BRAND_TOP
     , b.brand_name AS BRAND_NAME
-FROM {{ ref('tf_dimbrands') }} AS b
+FROM {{ ref('tf_brands') }} AS b
