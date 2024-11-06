@@ -1,5 +1,5 @@
 SELECT
-    b._idAS _id
+    b._id AS _id
     , NULLIF(b.barcode, '') AS barcode
     , NULLIF(b.brandCode, '') AS brandCode
     , NULLIF(b.category, '') AS category
