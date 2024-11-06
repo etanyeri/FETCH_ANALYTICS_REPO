@@ -23,5 +23,4 @@ SELECT
     , fr.FINAL_PRICE
     
 FROM {{ ref('tf_receipts') }} AS r
-JOIN 
-    flattened_receipt_items fr ON r.RECEIPT_KEY = fr.RECEIPT_KEY;
+JOIN flattened_receipt_items fr ON r.RECEIPT_KEY = fr.RECEIPT_KEY;
