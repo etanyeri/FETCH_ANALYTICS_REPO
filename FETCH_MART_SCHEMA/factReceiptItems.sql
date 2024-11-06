@@ -1,1 +1,15 @@
 
+SELECT
+  generate_surrogate_key(r.RECEIPT_KEY || '-' || fr.PRODUCT_ID) AS RECEIPT_ITEM_KEY
+  , RECEIPT_KEY
+  , USER_KEY
+  , RECEIPT_ID
+  , TOTAL_SPENT
+  , POINTS_EARNED
+  , RECEIPT_STATUS
+  , PRODUCT_ID
+  , QUANTITY_PURCHASED
+  , PRICE
+  , FINAL_PRICE
+
+FROM {{ ref('tf_receiptitems') }}
