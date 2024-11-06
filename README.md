@@ -13,7 +13,6 @@ This project creates a **Data Mart** with a focus on transactional data (receipt
 
 ## Project Structure
 
-- `fact_receipt_items.sql`: The SQL file responsible for generating the **Receipt Items** table with surrogate keys and transformed data from nested structures.
-- `fact_receipts.sql`: Contains SQL to generate the **Receipts** table by aggregating receipt-level information.
-- `models/`: Directory for all SQL transformation models.
-- `sources/`: Contains source files linking to raw input data, such as the `receipts` data.
+- `factReceiptItems.sql`: The SQL file responsible for generating the **Receipt Items** table with surrogate keys and transformed data from nested structures.
+- `factReceipts.sql`: Contains SQL to generate the **Receipts** table by aggregating receipt-level information.
+
