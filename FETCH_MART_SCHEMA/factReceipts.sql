@@ -1,5 +1,6 @@
 SELECT
     generate_surrogate_key(r.receipt_id) AS RECEIPT_KEY
+    , u.USER_KEY AS USER_KEY
     , r.receipt_id AS RECEIPT_ID
     , r.receipt_bonus_points_earned AS RECEIPT_BONUS_POINTS_EARNED
     , r.receipt_bonus_points_reason AS RECEIPT_BONUS_POINTS_REASON
@@ -14,5 +15,5 @@ SELECT
     , r.receipt_item_list AS RECEIPT_ITEM_LIST
     , r.receipt_status AS RECEIPT_STATUS
     , r.receipt_total_spent AS RECEIPT_TOTAL_SPENT
-    , r.user_id AS USER_ID
 FROM {{ ref('tf_receipts') }} AS r
+LEFT JOIN {{ ref('dimUsers') }} AS u ON r.user_id = u.user_id
