@@ -11,8 +11,6 @@ SELECT
     , r.receipt_points_awarded_date AS RECEIPT_POINTS_AWARDED_DATE
     , r.receipt_points_earned AS RECEIPT_POINTS_EARNED
     , r.receipt_purchase_date AS RECEIPT_PURCHASE_DATE
-    , r.receipt_item_count AS RECEIPT_ITEM_COUNT
-    , r.receipt_item_list AS RECEIPT_ITEM_LIST
     , r.receipt_status AS RECEIPT_STATUS
     , r.receipt_total_spent AS RECEIPT_TOTAL_SPENT
 FROM {{ ref('tf_receipts') }} AS r
