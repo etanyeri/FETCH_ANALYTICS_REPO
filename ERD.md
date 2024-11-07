@@ -1,5 +1,4 @@
-+---------------+
-|     Users    |
+Users (dimUser)
 +---------------+
 | USER_KEY (PK) |
 | USER_ID       |
@@ -11,8 +10,7 @@
        | 1:N
        |
        v
-+---------------+
-|    Receipts  |
+Receipts (factReceipts)
 +---------------+
 | RECEIPT_KEY (PK) |
 | USER_KEY (FK)    |
@@ -25,8 +23,7 @@
        | 1:N
        |
        v
-+-----------------+
-| Receipt_Items  |
+Receipt Items (factReceiptItems)
 +-----------------+
 | RECEIPT_ITEM_KEY (PK) |
 | RECEIPT_KEY (FK)      |
@@ -36,8 +33,7 @@
 | FINAL_PRICE           |
 +-----------------+
 
-+-------------+
-|    Brands  |
+Brands (dimBrand)
 +-------------+
 | BRAND_KEY (PK) |
 | BRAND_ID       |
@@ -45,3 +41,7 @@
 | BRAND_CPG      |
 | BRAND_CATEGORY |
 +-------------+
+
+
+
+
