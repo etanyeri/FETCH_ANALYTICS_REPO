@@ -3,6 +3,7 @@ SELECT
     generate_surrogate_key(ri.RECEIPT_ID || '-' || ri.PRODUCT_ID) AS RECEIPT_ITEM_KEY
     , ri.RECEIPT_KEY
     , ri.USER_KEY
+    , db.BRAND_KEY
     , ri.RECEIPT_ID
     , ri.PRODUCT_ID
     , ri.DESCRIPTION
@@ -20,3 +21,4 @@ SELECT
     , ri.REWARDS_PRODUCT_PARTNER_ID
     , ri.IS_COMPETITIVE_PRODUCT  
 FROM {{ ref('tf_receiptitems') }} AS ri
+LEFT JOIN {{ ref('dimBrand') }} AS db ON ri.PRODUCT_ID = db.BRAND_BARCODE
