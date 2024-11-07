@@ -25,8 +25,6 @@ SELECT
     r.RECEIPT_KEY
     , r.USER_KEY
     , r.RECEIPT_ID
-    , r.TOTAL_SPENT
-    , r.POINTS_EARNED
     , fr.PRODUCT_ID
     , fr.DESCRIPTION
     , fr.QUANTITY_PURCHASED
