@@ -1,5 +1,5 @@
 WITH flattened_receipt_items AS (
-    SELECT
+    SELECT DISTINCT
         r.RECEIPT_KEY
         , f.value:barcode::string AS PRODUCT_ID,
         , f.value:quantityPurchased::int AS QUANTITY_PURCHASED
