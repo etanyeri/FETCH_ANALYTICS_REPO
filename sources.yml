@@ -16,9 +16,6 @@ sources:
             tests:
               - not_null
               - unique
-            tests:
-              - not_null
-              - unique
               
       - name: brands
         description:  Information related to products purchased
