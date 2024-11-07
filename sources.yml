@@ -12,6 +12,10 @@ sources:
         columns:
           - name: _id
             description: Unique identifier for each receipt
+            column_type: INTEGER
+            tests:
+              - not_null
+              - unique
             tests:
               - not_null
               - unique
@@ -21,6 +25,7 @@ sources:
         columns:
           - name: _id
             description: Unique identifier for each product
+            column_type: INTEGER
             tests:
               - not_null
               - unique
@@ -30,6 +35,7 @@ sources:
         columns:
           - name: _id
             description: Unique identifier for each user
+            column_type: INTEGER
             tests:
               - not_null
               - unique
