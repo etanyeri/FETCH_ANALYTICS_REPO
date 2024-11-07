@@ -9,7 +9,7 @@ This project creates a **Data Mart** with a focus on transactional data (receipt
 - **Receipts Table**: Stores information about each receipt.
 - **Receipt Items Table**: Stores details about each purchased item in the receipt.
 - **User Table**: Information related to the user who made the purchase.
-- **Product Table**: Information related to products purchased.
+- **Brand Table**: Information related to products purchased.
 
 ## Project Structure
 
