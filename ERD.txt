@@ -1,47 +1,73 @@
 Users (dimUser)
-+---------------+
-| USER_KEY (PK) |
-| USER_ID       |
-| USER_STATE    |
-| USER_ROLE     |
-| CREATED_DATE  |
-+---------------+
++-------------------+
+| USER_KEY (PK)     |
+| USER_ID           |
+| USER_STATE        |
+| USER_CREATED_DATE |
+| USER_LAST_LOGIN   |
+| USER_ROLE         |
+| IS_ACTIVE         |
++-------------------+
        |
        | 1:N
        |
        v
 Receipts (factReceipts)
-+---------------+
-| RECEIPT_KEY (PK) |
-| USER_KEY (FK)    |
-| RECEIPT_ID       |
-| TOTAL_SPENT      |
-| POINTS_EARNED    |
-| RECEIPT_STATUS   |
-+---------------+
++-------------------------------+
+| RECEIPT_KEY (PK)              |
+| USER_KEY (FK)                 |
+| RECEIPT_ID                    |
+| RECEIPT_BONUS_POINTS_EARNED   |
+| RECEIPT_BONUS_POINTS_REASON   |
+| RECEIPT_CREATE_DATE           |
+| RECEIPT_DATE_SCANNED          |
+| RECEIPT_FINISHED_DATE         |
+| RECEIPT_MODIFY_DATE           |
+| RECEIPT_POINTS_AWARDED_DATE   |
+| RECEIPT_POINTS_EARNED         |
+| RECEIPT_PURCHASE_DATE         |
+| RECEIPT_STATUS                |
+| RECEIPT_TOTAL_SPENT           |
++-------------------------------+
        |
        | 1:N
        |
        v
 Receipt Items (factReceiptItems)
-+-----------------+
-| RECEIPT_ITEM_KEY (PK) |
-| RECEIPT_KEY (FK)      |
-| USER_KEY (FK)         |
-| PRODUCT_ID            |
-| QUANTITY_PURCHASED    |
-| PRICE                 |
-| FINAL_PRICE           |
-+-----------------+
++-------------------------------+
+| RECEIPT_ITEM_KEY (PK)         |
+| RECEIPT_KEY (FK)              |
+| USER_KEY (FK)                 |
+| RECEIPT_ID                    |
+| PRODUCT_ID                    |
+| DESCRIPTION                   |
+| QUANTITY_PURCHASED            |
+| PRICE                         |
+| FINAL_PRICE                   |
+| USER_FLAGGED_BARCODE          |
+| IS_USER_FLAGGED_NEW_ITEM      |
+| USER_FLAGGED_PRICE            |
+| USER_FLAGGED_QUANTITY         |
+| HAS_NEEDS_FETCH_REVIEW        |
+| PREVENT_TARGET_GAP_POINTS     |
+| PARTNER_ITEM_ID               |
+| REWARDS_GROUP                 |
+| REWARDS_PRODUCT_PARTNER_ID    |
+| IS_COMPETITIVE_PRODUCT        |
++-------------------------------+
 
 Brands (dimBrand)
-+-------------+
-| BRAND_KEY (PK) |
-| BRAND_ID       |
-| BRAND_NAME     |
-| BRAND_CPG      |
-| BRAND_CATEGORY |
-+-------------+
++--------------------------+
+| BRAND_KEY (PK)           |
+| BRAND_ID                 |
+| BRAND_BARCODE            |
+| BRAND_CODE               |
+| BRAND_CATEGORY           |
+| BRAND_CATEGORY_CODE      |
+| BRAND_CPG                |
+| IS_BRAND_TOP             |
+| BRAND_NAME               |
++--------------------------+
 
 
 
