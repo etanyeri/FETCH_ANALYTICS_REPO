@@ -27,6 +27,7 @@ Receipt Items (factReceiptItems)
 +-----------------+
 | RECEIPT_ITEM_KEY (PK) |
 | RECEIPT_KEY (FK)      |
+| USER_KEY (FK)         |
 | PRODUCT_ID            |
 | QUANTITY_PURCHASED    |
 | PRICE                 |
