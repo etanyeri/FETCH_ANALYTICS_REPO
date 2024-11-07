@@ -1,17 +1,12 @@
 
 SELECT
-  generate_surrogate_key(RECEIPT_ID || '-' || PRODUCT_ID) AS RECEIPT_ITEM_KEY
-  , ri.RECEIPT_KEY
-  , ri.RECEIPT_ID
-  , ri.TOTAL_SPENT
-  , ri.POINTS_EARNED
-  , ri.RECEIPT_STATUS
-  , ri.PRODUCT_ID
-  , ri.QUANTITY_PURCHASED
-  , ri.PRICE
-  , ri.FINAL_PRICE
-  , ri.DESCRIPTION
-  , ri.QUANTITY_PURCHASED
+    generate_surrogate_key(ri.RECEIPT_ID || '-' || ri.PRODUCT_ID) AS RECEIPT_ITEM_KEY
+    , ri.RECEIPT_KEY
+    , ri.USER_KEY
+    , ri.RECEIPT_ID
+    , ri.PRODUCT_ID
+    , ri.DESCRIPTION
+    , ri.QUANTITY_PURCHASED
     , ri.PRICE
     , ri.FINAL_PRICE
     , ri.USER_FLAGGED_BARCODE
@@ -23,6 +18,5 @@ SELECT
     , ri.PARTNER_ITEM_ID
     , ri.REWARDS_GROUP
     , ri.REWARDS_PRODUCT_PARTNER_ID
-    , ri.IS_COMPETITIVE_PRODUCT
-  
+    , ri.IS_COMPETITIVE_PRODUCT  
 FROM {{ ref('tf_receiptitems') }} AS ri
