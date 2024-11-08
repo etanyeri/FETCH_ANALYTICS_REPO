@@ -9,13 +9,18 @@ resource "snowflake_schema" "my_schema" {
   database = snowflake_database.data_warehouse.name
 }
 
+
+
 -- Create Staging Area for Data Files:
 resource "snowflake_stage" "my_stage" {
   name     = "RAW_STAGE"
+  url      = "s3://bucket-name/path/to/jsonfiles/"
   schema   = snowflake_schema.FETCH_RAW_SCHEMA.name
   file_format = "JSON"
   comment  = "Stage for receipts,brands and user data"
 }
+
+
 
 -- Create Tables:
 
