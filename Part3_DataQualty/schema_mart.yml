@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: dimBrand
+    description: Transformed brand data model
+    columns:
+      - name: BRAND_KEY
+        description: Unique identifier for each product
+        tests:
+          - not_null
+          - unique
+      - name: BRAND_CATEGORY
+        description: "Category of the brand"
+        tests:
+          - accepted_values:
+              values: ["Candy & Sweets", "Baking"]
+
+  - name: dimUser
+    description: Transformed user data model
+    columns:
+      - name: USER_KEY
+        description: Unique identifier for each user
+        tests:
+          - not_null
+          - unique
+      - name: IS_ACTIVE
+        description: flag if the user is still active or not
+        tests:
+          - accepted_values:
+              values: ["TRUE", "FALSE"]
+
+  - name: factReceipts
+    description: Transformed receipt data model
+    columns:
+      - name: RECEIPT_KEY
+        description: Unique identifier for each receipt
+        tests:
+          - not_null
+          - unique
+      - name: IS_ACTIVE
+        description: flag if the user is still active or not
+        tests:
+          - accepted_values:
+              values: ["TRUE", "FALSE"]
+            
