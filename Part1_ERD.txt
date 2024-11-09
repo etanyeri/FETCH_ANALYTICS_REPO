@@ -2,42 +2,42 @@ Users (dimUser)
 +-------------------+
 | USER_KEY (PK)     |
 | USER_ID           |
-| USER_STATE        |
-| USER_CREATED_DATE |
-| USER_LAST_LOGIN   |
-| USER_ROLE         |
-| IS_ACTIVE         |
-+-------------------+
-       |
-       | 1:N
-       |
-       v
-Receipts (factReceipts)
-+-------------------------------+
-| RECEIPT_KEY (PK)              |
-| USER_KEY (FK)                 |
-| RECEIPT_ID                    |
-| RECEIPT_BONUS_POINTS_EARNED   |
-| RECEIPT_BONUS_POINTS_REASON   |
-| RECEIPT_CREATE_DATE           |
-| RECEIPT_DATE_SCANNED          |
-| RECEIPT_FINISHED_DATE         |
-| RECEIPT_MODIFY_DATE           |
-| RECEIPT_POINTS_AWARDED_DATE   |
-| RECEIPT_POINTS_EARNED         |
-| RECEIPT_PURCHASE_DATE         |
-| RECEIPT_STATUS                |
-| RECEIPT_TOTAL_SPENT           |
-+-------------------------------+                
-       |
-       | 1:N
-       |
-       v
-Receipt Items (factReceiptItems)
-+-------------------------------+
-| RECEIPT_ITEM_KEY (PK)         |
-| RECEIPT_KEY (FK)              |         
-| USER_KEY (FK)                 |
+| USER_STATE        |  ----------------------------------
+| USER_CREATED_DATE |                                   |
+| USER_LAST_LOGIN   |                                   |
+| USER_ROLE         |                                   |
+| IS_ACTIVE         |                                   |
++-------------------+                                   |
+       |                                                |
+       | 1:N                                            |
+       |                                                |                                        |
+       v                                                |
+Receipts (factReceipts)                                 |
++-------------------------------+                       |
+| RECEIPT_KEY (PK)              |                       |
+| USER_KEY (FK)                 |                       |
+| RECEIPT_ID                    |                       |
+| RECEIPT_BONUS_POINTS_EARNED   |                       |                    
+| RECEIPT_BONUS_POINTS_REASON   |                       |
+| RECEIPT_CREATE_DATE           |                       |
+| RECEIPT_DATE_SCANNED          |                       |
+| RECEIPT_FINISHED_DATE         |                       |
+| RECEIPT_MODIFY_DATE           |                       |
+| RECEIPT_POINTS_AWARDED_DATE   |                       |
+| RECEIPT_POINTS_EARNED         |                       |
+| RECEIPT_PURCHASE_DATE         |                       |
+| RECEIPT_STATUS                |                       |
+| RECEIPT_TOTAL_SPENT           |                       |
++-------------------------------+                       |
+       |                                                |
+       | 1:N                                            |
+       |                                                | 
+       v                                                |
+Receipt Items (factReceiptItems)                        |
++-------------------------------+                       |
+| RECEIPT_ITEM_KEY (PK)         |                       |
+| RECEIPT_KEY (FK)              |             1:N       |
+| USER_KEY (FK)                 |   < --------------------     
 | BRAND_KEY (FK)                |
 | RECEIPT_ID                    |
 | PRODUCT_ID                    |
