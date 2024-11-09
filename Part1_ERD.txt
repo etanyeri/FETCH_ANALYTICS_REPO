@@ -28,7 +28,7 @@ Receipts (factReceipts)
 | RECEIPT_PURCHASE_DATE         |
 | RECEIPT_STATUS                |
 | RECEIPT_TOTAL_SPENT           |
-+-------------------------------+
++-------------------------------+                
        |
        | 1:N
        |
@@ -36,7 +36,7 @@ Receipts (factReceipts)
 Receipt Items (factReceiptItems)
 +-------------------------------+
 | RECEIPT_ITEM_KEY (PK)         |
-| RECEIPT_KEY (FK)              |
+| RECEIPT_KEY (FK)              |         
 | USER_KEY (FK)                 |
 | BRAND_KEY (FK)                |
 | RECEIPT_ID                    |
@@ -57,6 +57,11 @@ Receipt Items (factReceiptItems)
 | IS_COMPETITIVE_PRODUCT        |
 +-------------------------------+
 
+       ^
+       |
+       | 1:N
+       |
+
 Brands (dimBrand)
 +--------------------------+
 | BRAND_KEY (PK)           |
@@ -69,6 +74,8 @@ Brands (dimBrand)
 | IS_BRAND_TOP             |
 | BRAND_NAME               |
 +--------------------------+
+
+
 
 
 
