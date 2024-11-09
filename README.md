@@ -1,5 +1,5 @@
 # FETCH_ANALYTICS_REPO
-Fetch Rewards coding exercise, focusing on using Snowflake, dbt, and SQL
+Fetch Rewards coding exercise, focusing on using Snowflake, dbt, terraform and SQL
 
 ## Overview
 This project creates a **Data Mart** with a focus on transactional data (receipts, users, products) for business intelligence and reporting. It includes transforming raw transactional data into structured tables suitable for analysis. The goal is to provide a solid foundation for reporting by organizing transactional data into **fact** and **dimension** tables, with a key focus on **Receipts** and **Receipt Items**.
@@ -15,4 +15,5 @@ This project creates a **Data Mart** with a focus on transactional data (receipt
 
 - `factReceiptItems.sql`: The SQL file responsible for generating the **Receipt Items** table with surrogate keys and transformed data from nested structures.
 - `factReceipts.sql`: Contains SQL to generate the **Receipts** table by aggregating receipt-level information.
+- `dimBrand and dimUser`: Contains SQL to generate the **brands and users** table by aggregating relevant information.
 
