@@ -15,5 +15,5 @@ This project creates a **Data Mart** with a focus on transactional data (receipt
 
 - `factReceiptItems.sql`: The SQL file responsible for generating the **Receipt Items** table with surrogate keys and transformed data from nested structures.
 - `factReceipts.sql`: Contains SQL to generate the **Receipts** table by aggregating receipt-level information.
-- `dimBrand and dimUser`: Contains SQL to generate the **brands and users** table by aggregating relevant information.
+- `dimBrand.sql and dimUser.sql`: Contains SQL to generate the **brands and users** tables by aggregating relevant information.
 
