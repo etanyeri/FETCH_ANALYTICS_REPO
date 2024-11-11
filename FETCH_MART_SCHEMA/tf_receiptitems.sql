@@ -11,7 +11,7 @@ WITH flattened_receipt_items AS (
         , f.value:userFlaggedPrice::float AS USER_FLAGGED_PRICE
         , f.value:userFlaggedQuantity::int AS USER_FLAGGED_QUANTITY
         , f.value:needsFetchReview::boolean AS HAS_NEEDS_FETCH_REVIEW
-        , f.value:preventTargetGapPoints::boolean AS PREVENT_TARGET_GAP_POINTS
+        , f.value:preventTargetGapPoints::boolean AS HAS_PREVENT_TARGET_GAP_POINTS
         , f.value:partnerItemId::string AS PARTNER_ITEM_ID
         , f.value:rewardsGroup::string AS REWARDS_GROUP
         , f.value:rewardsProductPartnerId::string AS REWARDS_PRODUCT_PARTNER_ID
@@ -35,7 +35,7 @@ SELECT
     , fr.USER_FLAGGED_PRICE
     , fr.USER_FLAGGED_QUANTITY
     , fr.HAS_NEEDS_FETCH_REVIEW
-    , fr.PREVENT_TARGET_GAP_POINTS
+    , fr.HAS_PREVENT_TARGET_GAP_POINTS
     , fr.PARTNER_ITEM_ID
     , fr.REWARDS_GROUP
     , fr.REWARDS_PRODUCT_PARTNER_ID
