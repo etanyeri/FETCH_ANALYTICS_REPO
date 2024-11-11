@@ -14,11 +14,11 @@ WITH RecentReceipts AS (
 )
   -- Select top 5 brands by total receipts scanned from the most recent month
 SELECT 
-    b.BRAND_NAME
+    db.BRAND_NAME
     , SUM(rr.receipts_count) AS total_receipts_scanned
 FROM RecentReceipts rr
 LEFT JOIN dimBrand db ON rr.BRAND_KEY = db.BRAND_KEY
-GROUP BY b.BRAND_NAME
+GROUP BY db.BRAND_NAME
 ORDER BY total_receipts_scanned DESC
 LIMIT 5;
 
@@ -29,9 +29,9 @@ LIMIT 5;
   -- filter users created in the last 6 months
 WITH RecentUsers AS (
     SELECT 
-        u.USER_KEY
-    FROM dimUser u
-    WHERE u.USER_CREATED_DATE >= CURRENT_DATE - INTERVAL '6 months'
+        du.USER_KEY
+    FROM dimUser du
+    WHERE du.USER_CREATED_DATE >= CURRENT_DATE - INTERVAL '6 months'
 )
   
   -- calculate the total amount spent by recent users per brand
@@ -65,7 +65,7 @@ SELECT
         THEN 'Accepted'
         ELSE 'Rejected'
     END AS greater_status
-    , MAX(SUM(CASE WHEN r.RECEIPT_STATUS = 'Accepted' THEN i.QUANTITY_PURCHASED END)) AS total_accepted_items
-    , MAX(SUM(CASE WHEN r.RECEIPT_STATUS = 'Rejected' THEN i.QUANTITY_PURCHASED END)) AS total_rejected_items
+    , MAX(SUM(CASE WHEN fr.RECEIPT_STATUS = 'Accepted' THEN i.QUANTITY_PURCHASED END)) AS total_accepted_items
+    , MAX(SUM(CASE WHEN fr.RECEIPT_STATUS = 'Rejected' THEN i.QUANTITY_PURCHASED END)) AS total_rejected_items
 FROM AcceptedRejectedItems i
 LEFT JOIN factReceipts fr ON i.RECEIPT_KEY = fr.RECEIPT_KEY;
