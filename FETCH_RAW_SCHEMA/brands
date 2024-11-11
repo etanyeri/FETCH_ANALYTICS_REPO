@@ -1,9 +1,11 @@
 brands Table:
     - _id
+    - name
     - barcode
     - brandCode
     - category
     - categoryCode
-    - cpg
+    - cpg.id
+    - cpg.ref
     - topBrand
-    - name
+
