@@ -14,4 +14,6 @@ SELECT
     , r.rewardsReceiptStatus AS receipt_status
     , r.totalSpent AS receipt_total_spent
     , r.userId AS user_id
+    -- Stakeholder Request: Total points earned vs total spent
+    , (r.pointsEarned + r.bonusPointsEarned) / NULLIF(r.totalSpent, 0) AS receipt_points_per_dollar_spent   -- Prevent division by zero
 FROM {{ source('fetch_ingest', 'receipts') }} AS r
