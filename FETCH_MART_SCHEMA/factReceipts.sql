@@ -13,5 +13,6 @@ SELECT
     , r.receipt_purchase_date AS RECEIPT_PURCHASE_DATE
     , r.receipt_status AS RECEIPT_STATUS
     , r.receipt_total_spent AS RECEIPT_TOTAL_SPENT
+    , r.receipt_points_per_dollar_spent AS RECEIPT_POINTS_PER_DOLLAR_SPENT
 FROM {{ ref('tf_receipts') }} AS r
 LEFT JOIN {{ ref('dimUsers') }} AS du ON r.user_id = u.user_id
