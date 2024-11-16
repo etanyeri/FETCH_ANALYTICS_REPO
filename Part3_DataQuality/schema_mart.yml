@@ -11,6 +11,7 @@ models:
           - unique
       - name: BRAND_CATEGORY
         description: "Category of the brand"
+        data_type: string
         tests:
           - accepted_values:
               values: ["Candy & Sweets", "Baking"]
@@ -39,8 +40,9 @@ models:
         tests:
           - not_null
           - unique
-      - name: IS_ACTIVE
-        description: flag if the user is still active or not
+      - name: RECEIPT_PURCHASE_DATE
+        description: the date of the purchase done
+        data_type: date
         tests:
           - accepted_values:
               values: ["TRUE", "FALSE"]
