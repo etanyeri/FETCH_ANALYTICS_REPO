@@ -20,11 +20,13 @@ models:
     columns:
       - name: USER_KEY
         description: Unique identifier for each user
+        data_type: string
         tests:
           - not_null
           - unique
       - name: IS_ACTIVE
         description: flag if the user is still active or not
+        data_type: boolean
         tests:
           - accepted_values:
               values: ["TRUE", "FALSE"]
