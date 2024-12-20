@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: factReceipts
+    description: Transformed receipt data model
+    columns:
+      - name: RECEIPT_KEY
+        description: Unique identifier for each receipt
+        tests:
+          - not_null
+          - unique
+      - name: RECEIPT_PURCHASE_DATE
+        description: the date of the purchase done
+        data_type: date
+        tests:
+          - accepted_values:
+              values: ["TRUE", "FALSE"]
