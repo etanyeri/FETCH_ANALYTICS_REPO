@@ -1,7 +1,0 @@
-users Table:
-    - _id
-    - state
-    - createdDate
-    - lastLogin
-    - role
-    - active    
