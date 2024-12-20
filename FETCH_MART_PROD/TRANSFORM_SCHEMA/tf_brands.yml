@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: tf_brands
+    description: Transformation model of dim brand data model
+    columns:
+      - name: BRAND_ID
+        description: Unique identifier for each product
+        tests:
+          - not_null
+          - unique
+      - name: BRAND_CATEGORY
+        description: "Category of the brand"
+        data_type: string
+        tests:
+          - accepted_values:
+              values: ["Candy & Sweets", "Baking"]
