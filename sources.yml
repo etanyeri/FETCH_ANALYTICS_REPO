@@ -5,36 +5,65 @@ sources:
     database: FETCH_PROD_INGEST
     schema: Fetch_Schema_Raw
     description: "Raw data ingested from the Fetch system."
-    loader: "custom_script"  # Change if using Stitch, Fivetran, etc.
     tables:
       - name: brands
         description: "Table containing brand-related information."
         columns:
           - name: brand_id
             description: "Unique identifier for the brand."
+            tests:
+              - unique
+              - not_null
           - name: brand_name
             description: "Name of the brand."
+            tests:
+              - not_null
           - name: category
             description: "Category classification of the brand."
+            tests:
+              - accepted_values:
+                  values: ['Food', 'Beverage', 'Electronics', 'Clothing', 'Health', 'Beauty', 'Home', 'Automotive', 'Other']
 
       - name: receipts
         description: "Table storing receipt transaction data."
         columns:
           - name: receipt_id
             description: "Unique identifier for each receipt."
+            tests:
+              - unique
+              - not_null
           - name: user_id
             description: "User associated with the receipt."
+            tests:
+              - not_null
           - name: total_amount
             description: "Total amount spent on the receipt."
+            tests:
+              - not_null
+              - greater_than:
+                  value: 0
           - name: created_at
             description: "Timestamp when the receipt was created."
+            tests:
+              - not_null
 
       - name: users
         description: "Table containing user information."
         columns:
           - name: user_id
             description: "Unique identifier for the user."
+            tests:
+              - unique
+              - not_null
           - name: email
             description: "Email address of the user."
+            tests:
+              - not_null
+              - unique
+              - regex:
+                  pattern: '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'
           - name: signup_date
             description: "Date when the user signed up."
+            tests:
+              - not_null
+              - dbt_utils.date_is_in_past
