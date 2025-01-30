@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: fetch_schema_raw
+    database: FETCH_PROD_INGEST
+    schema: Fetch_Schema_Raw
+    description: "Raw data ingested from the Fetch system."
+    loader: "custom_script"  # Change if using Stitch, Fivetran, etc.
+    tables:
+      - name: brands
+        description: "Table containing brand-related information."
+        columns:
+          - name: brand_id
+            description: "Unique identifier for the brand."
+          - name: brand_name
+            description: "Name of the brand."
+          - name: category
+            description: "Category classification of the brand."
+
+      - name: receipts
+        description: "Table storing receipt transaction data."
+        columns:
+          - name: receipt_id
+            description: "Unique identifier for each receipt."
+          - name: user_id
+            description: "User associated with the receipt."
+          - name: total_amount
+            description: "Total amount spent on the receipt."
+          - name: created_at
+            description: "Timestamp when the receipt was created."
+
+      - name: users
+        description: "Table containing user information."
+        columns:
+          - name: user_id
+            description: "Unique identifier for the user."
+          - name: email
+            description: "Email address of the user."
+          - name: signup_date
+            description: "Date when the user signed up."
