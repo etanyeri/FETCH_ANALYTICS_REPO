@@ -2,15 +2,15 @@ version: 2
 
 models:
   - name: dimBrand
-    description: Transformed brand data model
+    description: Dimension table containing transformed brand-related attributes.
     columns:
       - name: BRAND_KEY
-        description: Unique identifier for each product
+        description: Unique identifier for each brand derived by brand_id field.
         tests:
           - not_null
           - unique
       - name: BRAND_CATEGORY
-        description: "Category of the brand"
+        description: Category classification of the brand.
         data_type: string
         tests:
           - accepted_values:
