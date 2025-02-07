@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: dimUser
-    description: Transformed user data model
+    description: Dimension table containing user-related attributes for the Fetch Application.
     columns:
       - name: USER_KEY
-        description: Unique identifier for each user
+        description: Surrogate key uniquely identifying each user, derived from the user ID.
         data_type: string
         tests:
           - not_null
