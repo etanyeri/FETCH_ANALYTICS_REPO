@@ -13,5 +13,16 @@ models:
         description: the date of the purchase done
         data_type: date
         tests:
-          - accepted_values:
-              values: ["TRUE", "FALSE"]
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: "2000-01-01"
+              max_value: "2099-12-31"
+      - name: RECEIPT_POINTS_EARNED
+        description: Points earned from the purchase
+        data_type: integer
+        tests:
+          - not_null
+          - between:
+              min_value: 1
+              max_value: 1000
+
