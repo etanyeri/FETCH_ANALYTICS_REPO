@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: factReceipts
-    description: Transformed receipt data model
+    description: Fact table containing receipt-related transactional data, including quantitative and aggregatable metrics.
     columns:
       - name: RECEIPT_KEY
         description: Unique identifier for each receipt
